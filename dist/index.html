@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="styles.css" />
+    <title>TO-DO</title>
+  </head>
+  <body>
+    <div class="top">
+      <img
+        src="https://upload.wikimedia.org/wikipedia/commons/thumb/3/3b/Eo_circle_green_checkmark.svg/2048px-Eo_circle_green_checkmark.svg.png"
+        alt="To do checkmark icon"
+      />
+      <h1>To-Do List</h1>
+    </div>
+    <div class="container">
+      <div class="sidebar">
+        <div class="time">
+          <h1 class="sidebar-heading">Time</h1>
+          <div id="all-time " class="sidebar-btn">
+            <h2>All Time</h2>
+          </div>
+          <div id="one-day " class="sidebar-btn">
+            <h2>One Day</h2>
+          </div>
+          <div id="seven-day " class="sidebar-btn">
+            <h2>Seven Days</h2>
+          </div>
+          <div id="important " class="sidebar-btn">
+            <h2>Important</h2>
+          </div>
+        </div>
+        <div class="project">
+          <h1 class="sidebar-heading">Projects</h1>
+          <div id="add-project" class="sidebar-btn">
+            <h2>+ ADD PROJECT</h2>
+          </div>
+          <div id="projects-container"></div>
+        </div>
+      </div>
+      <div class="content" id="content"></div>
+    </div>
+    <script src="main.js"></script>
+  </body>
+</html>
