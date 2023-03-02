@@ -14,40 +14,79 @@
     <title>TO-DO</title>
   </head>
   <body>
-    <div class="top">
+    <header class="top">
       <img
         src="https://upload.wikimedia.org/wikipedia/commons/thumb/3/3b/Eo_circle_green_checkmark.svg/2048px-Eo_circle_green_checkmark.svg.png"
         alt="To do checkmark icon"
       />
       <h1>To-Do List</h1>
-    </div>
-    <div class="container">
-      <div class="sidebar">
+    </header>
+    <main class="container">
+      <!-- SIDEBAR -->
+      <nav class="sidebar">
+        <!-- FILTER BY TIME -->
         <div class="time">
           <h1 class="sidebar-heading">Time</h1>
-          <div id="all-time " class="sidebar-btn">
+          <div id="all-time" class="sidebar-btn sidebar-day">
             <h2>All Time</h2>
           </div>
-          <div id="one-day " class="sidebar-btn">
+          <div id="one-day" class="sidebar-btn sidebar-day">
             <h2>One Day</h2>
           </div>
-          <div id="seven-day " class="sidebar-btn">
+          <div id="seven-day" class="sidebar-btn sidebar-day">
             <h2>Seven Days</h2>
           </div>
-          <div id="important " class="sidebar-btn">
+          <div id="important" class="sidebar-btn sidebar-day">
             <h2>Important</h2>
           </div>
         </div>
+        <!-- NAVIGATE TO PROJECTS -->
         <div class="project">
           <h1 class="sidebar-heading">Projects</h1>
-          <div id="add-project" class="sidebar-btn">
+          <div id="add-project-btn" class="sidebar-btn">
             <h2>+ ADD PROJECT</h2>
           </div>
-          <div id="projects-container"></div>
+          <form id="add-project-form">
+            <input
+              type="text"
+              id="project-name"
+              placeholder="Add project title"
+            />
+            <div>
+              <button id="new-project-btn">Add</button>
+              <button id="cancel-project-btn">Cancel</button>
+            </div>
+          </form>
+          <div id="sidebar-projects-container"></div>
         </div>
-      </div>
-      <div class="content" id="content"></div>
-    </div>
+      </nav>
+
+      <!-- MAIN CONTENT SECTION  -->
+      <section class="content" id="content">
+        <!-- Hidden - Visible if you want to view task by Filter -->
+        <div class="content-task" id="content-task">
+          <div>
+            <h1 id="content-task-heading">CONTENT</h1>
+          </div>
+          <div id="content-task-list"></div>
+        </div>
+        <!-- Hidden - Visible if you select Project -->
+        <div class="content-project" id="content-project">
+          <div>
+            <h1 id="content-project-heading">PROJECT</h1>
+          </div>
+          <form id="add-task-form">
+            <input type="text" id="task-name" placeholder="Add task title" />
+            <div>
+              <button id="new-task-btn">Add</button>
+              <button id="cancel-task-btn">Cancel</button>
+            </div>
+          </form>
+          <div id="content-project-list"></div>
+        </div>
+      </section>
+    </main>
+
     <script src="main.js"></script>
   </body>
 </html>
