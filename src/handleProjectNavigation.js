@@ -31,6 +31,9 @@ function openProject(projectName) {
   for (i = 0; i < projects.length; i++) {
     if (projectName === projects[i].name) break;
   }
+  //disable pastDate Selection
+  let today = new Date().toISOString().split("T")[0];
+  formTaskDate.setAttribute("min", today);
 
   currIndex = i;
   clearProjectContent();
