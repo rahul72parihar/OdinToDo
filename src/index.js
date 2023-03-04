@@ -5,14 +5,9 @@ import { handleByDay } from "./handleByDay";
 import { renderSidebarProjects } from "./handleSidebarProjects";
 import { Project, projects } from "./projectsData";
 
-// renderSidebarProjects();
-// handleByDay();
-// projects = localStorage.getItem("projects")
-//   ? JSON.parse(localStorage.getItem("projects"))
-//   : [];
 function InitializeData() {
-  // console.log(JSON.parse(localStorage.getItem("projects")));
-  projects = JSON.parse(localStorage.getItem("projects"));
+  if (JSON.parse(localStorage.getItem("projects")))
+    projects = JSON.parse(localStorage.getItem("projects"));
   projects = projects.map((curr) => new Project(curr.name, curr.taskList));
   renderSidebarProjects();
   handleByDay();
