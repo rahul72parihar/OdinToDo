@@ -10,6 +10,10 @@
       href="https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700&display=swap"
       rel="stylesheet"
     />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
+    />
     <link rel="stylesheet" href="styles.css" />
     <title>TO-DO</title>
   </head>
@@ -46,6 +50,7 @@
           <div id="add-project-btn" class="sidebar-btn">
             <h2>+ ADD PROJECT</h2>
           </div>
+          <!-- Hidden Unless added new project -->
           <form id="add-project-form">
             <input
               type="text"
@@ -63,6 +68,7 @@
 
       <!-- MAIN CONTENT SECTION  -->
       <section class="content" id="content">
+        <div id="content-by-day"></div>
         <!-- Hidden - Visible if you want to view task by Filter -->
         <div class="content-task" id="content-task">
           <div>
@@ -75,12 +81,25 @@
           <div>
             <h1 id="content-project-heading">PROJECT</h1>
           </div>
-          <form id="add-task-form">
-            <input type="text" id="task-name" placeholder="Add task title" />
-            <div>
-              <button id="new-task-btn">Add</button>
-              <button id="cancel-task-btn">Cancel</button>
-            </div>
+          <div>
+            <button id="delete-project">DELETE PROJECT</button>
+          </div>
+          <form id="add-task-form" onsubmit="return false">
+            <input
+              type="text"
+              id="task-name"
+              placeholder="Add task title"
+              required
+            />
+            <input
+              type="text"
+              id="task-desc"
+              placeholder="Add task desciption"
+            />
+            <input type="date" id="task-date" required />
+            <label for="task-imp">Important</label>
+            <input type="checkbox" id="task-imp" value="true" />
+            <button id="new-task-btn">Add</button>
           </form>
           <div id="content-project-list"></div>
         </div>

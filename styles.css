@@ -10,6 +10,9 @@ body {
   color: white;
   text-shadow: 0 0 10px black;
 }
+button {
+  font-family: "Inter", sans-serif;
+}
 /* TOP SECTION */
 .top {
   height: 70px;
@@ -28,7 +31,7 @@ body {
 /* CONTAINER */
 .container {
   display: flex;
-  height: calc(100vh - 70px);
+  min-height: calc(100vh - 70px);
   background-color: white;
 }
 /* SIDEBAR */
@@ -118,13 +121,17 @@ body {
 }
 /* SIDEBAR UTILITY */
 .selected {
-  background-color: greenyellow;
+  background: #6943ff;
 }
 /* CONTENT */
 .content {
   background-color: #2a1f57;
   flex: 1;
   padding: 20px;
+}
+/* CONTENT > BY DAY */
+#content-by-day {
+  display: none;
 }
 /* CONTENT > TASK */
 .content-task {
@@ -133,4 +140,94 @@ body {
 /* CONTENT > PROJECT */
 .content-project {
   display: none;
+  animation: slidein 300ms;
+}
+#delete-project,
+.delete-task-btn {
+  font-size: 18px;
+  background-color: #ce0000;
+  padding: 0.5em 0.7em;
+  margin: 0.5em 0;
+  color: white;
+  font-weight: bold;
+  border: 1px solid white;
+  border-radius: 10px;
+}
+/* CONTENT > PROJECT > ADD TASK FORM */
+#add-task-form {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  font-size: 20px;
+  align-items: center;
+  margin: 20px 0;
+  font-weight: bold;
+}
+
+#add-task-form > input {
+  color: white;
+  background-color: transparent;
+  border: 1px solid white;
+  height: 35px;
+  padding-left: 10px;
+  font-size: 20px;
+  font-weight: bold;
+}
+
+#task-desc {
+  flex-grow: 0.6;
+}
+
+input[type="checkbox"] {
+  color: white;
+  accent-color: limegreen;
+  height: 30px;
+  width: 30px;
+}
+
+#add-task-form > button {
+  color: black;
+  background-color: limegreen;
+  border: 1px solid white;
+  padding: 0.3em 0.5em;
+  font-size: 20px;
+  font-weight: bolder;
+  box-shadow: 0 0 10px black;
+  border-radius: 10px;
+}
+/* CONTENT > PROJECT > TASK */
+.task-div {
+  text-align: left;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 10px 20px;
+  margin: 20px 0;
+  gap: 10px;
+  background-color: rgba(240, 248, 255, 0.26);
+  border-radius: 10px;
+  flex-wrap: wrap;
+}
+.task-div > h2 {
+  flex: 1;
+}
+.star {
+  font-size: 30px;
+  margin-right: 20px;
+  color: white;
+}
+
+.golden-star {
+  color: gold;
+}
+
+.empty-div {
+  height: 70vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.empty-div > img {
+  width: 50%;
+  border-radius: 20px;
 }
