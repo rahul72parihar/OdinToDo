@@ -17,4 +17,5 @@ export function renderSidebarProjects() {
     fragment.appendChild(divContainer);
   });
   sideBarProjects.replaceChildren(fragment);
+  localStorage.setItem("projects", JSON.stringify(projects));
 }

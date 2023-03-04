@@ -1,28 +1,39 @@
-class Project {
-  constructor(name) {
+export class Project {
+  constructor(name, taskList) {
     this.name = name;
-    this.taskList = [];
+    this.taskList = taskList;
   }
   addTask(task) {
     this.taskList.push(task);
   }
   removeTask(name) {
-    this.taskList.filter((element) => {
+    this.taskList = this.taskList.filter((element) => {
       return element.name !== name;
     });
   }
-}
-class Task {
-  constructor(name, subheading, date, isCompleted) {
-    this.name = name;
-    this.subheading = subheading;
-    this.date = date;
-    this.isCompleted = isCompleted;
+  toggleImportantOfTask(name) {
+    this.taskList = this.taskList.map((element) => {
+      if (element.name === name) {
+        element.isImportant = !element.isImportant;
+      }
+      return element;
+    });
   }
 }
-export const projects = [];
+
+export class Task {
+  constructor(name, description, date, isImportant) {
+    this.name = name;
+    this.description = description;
+    this.date = date;
+    this.isCompleted = false;
+    this.isImportant = isImportant;
+  }
+}
+export let projects = [];
+
 export function makeNewProject(name) {
-  let temp = new Project(name);
+  let temp = new Project(name, []);
   let isProjectUnique = true;
   projects.forEach((project) => {
     if (name.toLowerCase() === project.name.toLowerCase()) {
@@ -32,6 +43,19 @@ export function makeNewProject(name) {
   });
   if (!isProjectUnique) return;
   projects.push(temp);
-  //   console log
-  console.log(projects);
+}
+export function addNewTask(projectName, name, desc, date, imp) {
+  console.log(projectName);
+  let temp = new Task(name, desc, date, imp);
+  const i = findCurrIndex(projectName);
+  console.log(i);
+  projects[i].taskList.push(temp);
+}
+export function deleteProjectFromArray(name) {
+  projects = projects.filter((curr) => curr.name !== name);
+}
+function findCurrIndex(projectName) {
+  for (let i = 0; i < projects.length; i++) {
+    if (projects[i].name === projectName) return i;
+  }
 }

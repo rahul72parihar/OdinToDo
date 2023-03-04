@@ -3,6 +3,5 @@ export function makeBtnSelected(element) {
   allBtn.forEach((ele) => {
     ele.classList.remove("selected");
   });
-  console.log(element);
   element.classList.add("selected");
 }
