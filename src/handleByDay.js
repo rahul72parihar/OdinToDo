@@ -24,7 +24,6 @@ let renderImp;
 function renderByDay(noOfDays, important) {
   renderTill = noOfDays;
   renderImp = important;
-  console.log(noOfDays, important);
   contentByDay.style.display = "block";
 
   // HEADING

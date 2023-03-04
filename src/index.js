@@ -11,7 +11,6 @@ function InitializeData() {
   projects = projects.map((curr) => new Project(curr.name, curr.taskList));
   renderSidebarProjects();
   handleByDay();
-  console.log(projects);
 }
 InitializeData();
 

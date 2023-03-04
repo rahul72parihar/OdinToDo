@@ -45,10 +45,8 @@ export function makeNewProject(name) {
   projects.push(temp);
 }
 export function addNewTask(projectName, name, desc, date, imp) {
-  console.log(projectName);
   let temp = new Task(name, desc, date, imp);
   const i = findCurrIndex(projectName);
-  console.log(i);
   projects[i].taskList.push(temp);
 }
 export function deleteProjectFromArray(name) {

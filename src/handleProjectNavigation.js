@@ -107,16 +107,12 @@ function handlePageClick(e) {
 
 export function deleteTaskByClick(e) {
   const i = projectIndex(e.target.getAttribute("projectName"));
-  console.log("i -> ", i);
-  console.log(projects[i]);
-  console.log(e.target.getAttribute("data"));
   projects[i].removeTask(e.target.getAttribute("data"));
 }
 
 export function toggleImp(e) {
   const i = projectIndex(e.target.getAttribute("projectName"));
   projects[i].toggleImportantOfTask(e.target.getAttribute("data"));
-  console.log(e.target);
 }
 
 function projectIndex(name) {
