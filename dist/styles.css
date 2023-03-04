@@ -10,6 +10,9 @@ body {
   color: white;
   text-shadow: 0 0 10px black;
 }
+button {
+  font-family: "Inter", sans-serif;
+}
 /* TOP SECTION */
 .top {
   height: 70px;
@@ -23,45 +26,209 @@ body {
   width: 50px;
   box-shadow: 0 0 10px black;
   border-radius: 50%;
+  background-color: white;
 }
 /* CONTAINER */
 .container {
   display: flex;
-  height: calc(100vh - 70px);
+  min-height: calc(100vh - 70px);
   background-color: white;
 }
 /* SIDEBAR */
 .sidebar {
+  width: 200px;
   font-size: 0.8em;
   background-color: #131313;
   display: flex;
   flex-direction: column;
   padding: 10px 15px;
 }
+
 .sidebar-heading {
   text-align: left;
   margin: 0.2em;
 }
+
 .sidebar-btn {
-  padding: 0.5em 1em;
+  padding: 0.6em 1.5em;
   background: rgba(240, 248, 255, 0.2);
   margin-bottom: 10px;
   border-radius: 20px;
 }
+
 .sidebar-btn:hover {
   cursor: pointer;
 }
+
 .time {
   margin-bottom: 50px;
 }
+
 #add-project {
   padding: 1em 1em;
   margin: 1em 0;
   border-radius: 5px;
   color: greenyellow;
 }
+/* SIDEBAR FORM */
+#add-project-form {
+  width: 100%;
+  animation: slidein 300ms;
+  display: none;
+}
+
+@keyframes slidein {
+  from {
+    transform: translateX(-40px);
+    opacity: 0;
+  }
+  to {
+    display: block;
+  }
+}
+
+#add-project-form > input {
+  font-size: 20px;
+  width: 100%;
+  height: 30px;
+  padding-left: 5px;
+  background-color: transparent;
+  color: white;
+  border: 1px solid white;
+}
+
+#add-project-form > div {
+  display: flex;
+  justify-content: center;
+  gap: 5px;
+  margin: 5px;
+}
+
+#add-project-form > div > button {
+  background-color: limegreen;
+  padding: 0.4em 0.7em;
+  font-size: 20px;
+  color: white;
+  border-radius: 5px;
+}
+
+#add-project-form > div > button:nth-child(2) {
+  background-color: red;
+}
+
+.sidebar-btn > h2 {
+  pointer-events: none;
+}
+/* SIDEBAR UTILITY */
+.selected {
+  background: #6943ff;
+}
 /* CONTENT */
 .content {
   background-color: #2a1f57;
   flex: 1;
+  padding: 20px;
+}
+/* CONTENT > BY DAY */
+#content-by-day {
+  display: none;
+}
+/* CONTENT > TASK */
+.content-task {
+  display: none;
+}
+/* CONTENT > PROJECT */
+.content-project {
+  display: none;
+  animation: slidein 300ms;
+}
+#delete-project,
+.delete-task-btn {
+  font-size: 18px;
+  background-color: #ce0000;
+  padding: 0.5em 0.7em;
+  margin: 0.5em 0;
+  color: white;
+  font-weight: bold;
+  border: 1px solid white;
+  border-radius: 10px;
+}
+/* CONTENT > PROJECT > ADD TASK FORM */
+#add-task-form {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  font-size: 20px;
+  align-items: center;
+  margin: 20px 0;
+  font-weight: bold;
+}
+
+#add-task-form > input {
+  color: white;
+  background-color: transparent;
+  border: 1px solid white;
+  height: 35px;
+  padding-left: 10px;
+  font-size: 20px;
+  font-weight: bold;
+}
+
+#task-desc {
+  flex-grow: 0.6;
+}
+
+input[type="checkbox"] {
+  color: white;
+  accent-color: limegreen;
+  height: 30px;
+  width: 30px;
+}
+
+#add-task-form > button {
+  color: black;
+  background-color: limegreen;
+  border: 1px solid white;
+  padding: 0.3em 0.5em;
+  font-size: 20px;
+  font-weight: bolder;
+  box-shadow: 0 0 10px black;
+  border-radius: 10px;
+}
+/* CONTENT > PROJECT > TASK */
+.task-div {
+  text-align: left;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 10px 20px;
+  margin: 20px 0;
+  gap: 10px;
+  background-color: rgba(240, 248, 255, 0.26);
+  border-radius: 10px;
+  flex-wrap: wrap;
+}
+.task-div > h2 {
+  flex: 1;
+}
+.star {
+  font-size: 30px;
+  margin-right: 20px;
+  color: white;
+}
+
+.golden-star {
+  color: gold;
+}
+
+.empty-div {
+  height: 70vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.empty-div > img {
+  width: 90%;
+  max-width: 700px;
+  border-radius: 20px;
 }
